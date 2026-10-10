@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bakrblog | إدارة حسابات التواصل الاجتماعي شهريًا</title>
+<meta name="description" content="إدارة شهرية مستمرة لإنستغرام وواتساب والحملات الإعلانية وكتابة المحتوى لأصحاب الأنشطة التجارية في السعودية.">
+<meta name="theme-color" content="#161033">
+<meta property="og:title" content="bakrblog | إدارة حسابات التواصل الاجتماعي">
+<meta property="og:description" content="أدير حساباتك على السوشال ميديا شهريًا، وأنت تتفرغ لمشروعك.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Readex+Pro:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #161033;
+    --night-2: #231A57;
+    --paper: #F6F4FA;
+    --white: #FFFFFF;
+    --muted: #5A5575;
+    --muted-dark: #C9C3E8;
+    --line: #DDD8EA;
+    --line-dark: #3A2F7A;
+    --coral: #FF6B57;
+    --wa: #25D366;
+    --wa-hover: #4BE184;
+    --bubble-out: #DDF7E7;
+    --head: "Readex Pro", "Tajawal", system-ui, sans-serif;
+    --body: "IBM Plex Sans Arabic", "Tajawal", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--body); font-size: 1.0625rem; line-height: 1.9;
+    color: var(--night); background: var(--paper); -webkit-text-size-adjust: 100%;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+
+  .wrap { width: min(100% - 2.5rem, 62rem); margin-inline: auto; }
+
+  /* header + hero share the dark field */
+  .top { padding-block: 1.1rem; background: var(--night); color: var(--white); border-bottom: 1px solid var(--line-dark); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .brand { font-family: var(--head); font-weight: 700; font-size: 1.25rem; direction: ltr; text-decoration: none; }
+  .btn {
+    display: inline-block; font-family: var(--head); font-weight: 600; font-size: 1rem;
+    background: var(--wa); color: var(--night); text-decoration: none;
+    padding: 0.85rem 1.7rem; border-radius: 0.7rem; line-height: 1.4;
+    transition: background-color 0.15s;
+  }
+  .btn:hover { background: var(--wa-hover); }
+  .btn.small { padding: 0.5rem 1.1rem; font-size: 0.9375rem; }
+
+  .hero { background: var(--night); color: var(--white); padding-block: clamp(2.5rem, 8vw, 5.5rem) clamp(3rem, 9vw, 6rem); }
+  .hero .wrap { display: grid; gap: 3rem; }
+  .hero h1 { font-family: var(--head); font-weight: 700; line-height: 1.4; font-size: clamp(2.05rem, 7.2vw, 3.7rem); max-width: 16ch; }
+  .hero p.lead { margin-top: 1.25rem; max-width: 36rem; color: var(--muted-dark); font-size: 1.125rem; }
+  .hero .actions { margin-top: 1.9rem; }
+  .hero .actions small { display: block; margin-top: 0.7rem; color: var(--muted-dark); font-size: 0.9375rem; line-height: 1.7; }
+
+  /* the one bold move: a chat card with a solid coral offset block */
+  .chat {
+    background: var(--paper); color: var(--night); border-radius: 1.1rem; padding: 1.3rem;
+    max-width: 26rem; box-shadow: -0.7rem 0.7rem 0 var(--coral);
+  }
+  .chat .cap { font-size: 0.9375rem; color: var(--muted); margin-bottom: 0.9rem; line-height: 1.6; }
+  .bubble { padding: 0.7rem 1rem; border-radius: 1rem; font-size: 1rem; line-height: 1.8; max-width: 92%; }
+  .bubble + .bubble { margin-top: 0.6rem; }
+  .bubble.you { background: var(--bubble-out); border-start-end-radius: 0.25rem; }
+  .bubble.me { background: var(--white); border: 1px solid var(--line); border-start-start-radius: 0.25rem; margin-inline-start: auto; }
+
+  @media (min-width: 52rem) {
+    .hero .wrap { grid-template-columns: 1.35fr 1fr; align-items: center; gap: 3.5rem; }
+  }
+
+  /* sections */
+  section.block { padding-block: clamp(2.5rem, 7vw, 4.5rem); }
+  section.block + section.block { border-top: 1px solid var(--line); }
+  section.block h2 { font-family: var(--head); font-weight: 600; font-size: clamp(1.5rem, 4.6vw, 2.1rem); line-height: 1.5; margin-bottom: 1.5rem; max-width: 24ch; }
+  section.tint { background: var(--white); }
+
+  .services { display: grid; }
+  .services div { display: grid; gap: 0.15rem 2rem; padding-block: 1.1rem; border-bottom: 1px solid var(--line); }
+  .services div:first-child { border-top: 2px solid var(--night); }
+  .services dt { font-family: var(--head); font-weight: 600; font-size: 1.125rem; }
+  .services dd { color: var(--muted); max-width: 40rem; }
+  @media (min-width: 46rem) { .services div { grid-template-columns: 13rem 1fr; } }
+
+  .steps { list-style: none; counter-reset: s; display: grid; gap: 1.25rem; max-width: 42rem; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 2.4rem 1fr; gap: 0.9rem; align-items: start; }
+  .steps li::before {
+    content: counter(s); font-family: var(--head); font-weight: 700; font-size: 1.05rem;
+    width: 2.4rem; height: 2.4rem; display: grid; place-items: center;
+    background: var(--coral); color: var(--night); border-radius: 50%; margin-top: 0.15rem;
+  }
+
+  .promises { display: grid; gap: 1.1rem; max-width: 42rem; list-style: none; }
+  .promises li { padding-inline-start: 1.1rem; border-inline-start: 4px solid var(--coral); }
+  .promises strong { font-family: var(--head); font-weight: 600; display: block; }
+  .promises span { color: var(--muted); }
+
+  .price p { max-width: 38rem; color: var(--muted); }
+
+  section.final { background: var(--night); color: var(--white); border-top: 0; }
+  section.final h2 { color: var(--white); }
+  section.final p { max-width: 36rem; color: var(--muted-dark); margin-bottom: 1.6rem; }
+
+  footer { background: var(--night); color: var(--muted-dark); border-top: 1px solid var(--line-dark); padding-block: 1.6rem; font-size: 0.9375rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; justify-content: space-between; }
+  footer .ltr { direction: ltr; unicode-bidi: embed; }
+
+  .sticky { display: none; }
+  @media (max-width: 45.99rem) {
+    body { padding-bottom: 4.8rem; }
+    .sticky {
+      display: block; position: fixed; inset-inline: 0; bottom: 0; z-index: 10;
+      padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom));
+      background: var(--night); border-top: 1px solid var(--line-dark);
+    }
+    .sticky .btn { display: block; text-align: center; width: 100%; }
+    .top .btn.small { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">bakrblog</a>
+    <a class="btn small" href="https://wa.me/966548480154?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%20%D8%AD%D8%B3%D8%A7%D8%A8%D8%A7%D8%AA%20%D9%86%D8%B4%D8%A7%D8%B7%D9%8A%20%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A.">تواصل عبر واتساب</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>أدير حساباتك على السوشال ميديا، وأنت تتفرغ لمشروعك</h1>
+        <p class="lead">إدارة شهرية مستمرة لإنستغرام وواتساب والحملات الإعلانية وكتابة المحتوى، مع تقرير شهري واضح يبيّن ما نُشر وما تحقق.</p>
+        <div class="actions">
+          <a class="btn" href="https://wa.me/966548480154?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%20%D8%AD%D8%B3%D8%A7%D8%A8%D8%A7%D8%AA%20%D9%86%D8%B4%D8%A7%D8%B7%D9%8A%20%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A.">اطلب عرض سعر عبر واتساب</a>
+          <small>الرد على واتساب مباشرة، دون نماذج أو اتصالات.</small>
+        </div>
+      </div>
+
+      <div class="chat" aria-label="مثال على بداية المحادثة">
+        <p class="cap">هكذا تبدأ المحادثة عند الضغط على الزر:</p>
+        <div class="bubble you">أهلاً، أرغب بعرض سعر لإدارة حسابات نشاطي التجاري.</div>
+        <div class="bubble me">أهلاً بك. أخبرني ما نوع نشاطك، وما المنصات التي تستخدمها حاليًا؟</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-services">
+    <div class="wrap">
+      <h2 id="h-services">ما الذي أديره لك</h2>
+      <dl class="services">
+        <div><dt>إنستغرام</dt><dd>خطة نشر شهرية، وكتابة المنشورات والريلز وجدولتها، والتفاعل مع التعليقات والرسائل.</dd></div>
+        <div><dt>واتساب</dt><dd>ترتيب الردود على العملاء وصياغة الرسائل الجاهزة، لتصل إليهم إجابة واضحة وبسرعة.</dd></div>
+        <div><dt>الحملات الإعلانية</dt><dd>إعداد الحملات ومتابعتها وتعديلها بحسب الأداء الفعلي.</dd></div>
+        <div><dt>كتابة المحتوى</dt><dd>نصوص المنشورات والإعلانات بلهجة تناسب نشاطك وجمهورك في السعودية.</dd></div>
+        <div><dt>مهام شهرية أخرى</dt><dd>أي عمل رقمي مستمر يحتاجه نشاطك. نتفق عليه قبل البدء.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="block tint" aria-labelledby="h-steps">
+    <div class="wrap">
+      <h2 id="h-steps">كيف يبدأ التعاون</h2>
+      <ol class="steps">
+        <li>تراسلني على واتساب وتخبرني عن نشاطك وما تريده من حساباتك.</li>
+        <li>أراجع حساباتك وأرسل لك ملاحظاتي وعرضًا مناسبًا لحجم عملك.</li>
+        <li>نعتمد جدول المحتوى لكل شهر قبل أن يبدأ.</li>
+        <li>أنفّذ وأرد وأتابع الحملات، ويصلك تقرير شهري بما تم.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-promises">
+    <div class="wrap">
+      <h2 id="h-promises">كيف أتعامل مع حساباتك</h2>
+      <ul class="promises">
+        <li><strong>لا أطلب كلمات المرور</strong><span>أعمل عبر مدير الأعمال الرسمي (Meta Business Manager) بصلاحيات تحددها أنت، وتسحبها متى شئت.</span></li>
+        <li><strong>ما يُنتج لك ملك لك</strong><span>النصوص والملفات التي أعدها لحسابك تبقى لك، وبياناتك ومبيعاتك سرّ بيننا.</span></li>
+        <li><strong>لا أعد بأرقام لا أتحكم بها</strong><span>المبيعات تتأثر بمنتجك وسعرك وسرعة ردّك. أعدك بالتزام بجدول النشر، وبتقارير صريحة.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block price tint" aria-labelledby="h-price">
+    <div class="wrap">
+      <h2 id="h-price">السعر</h2>
+      <p>الأسعار شهرية، وتُحدَّد بعد أن أعرف نشاطك وعدد المنصات وحجم العمل المطلوب، حتى لا تدفع مقابل ما لا تحتاجه. أخبرني بمتطلباتك وأرسل لك العرض.</p>
+    </div>
+  </section>
+
+  <section class="block final" aria-labelledby="h-final">
+    <div class="wrap">
+      <h2 id="h-final">أرسل لي رابط حسابك</h2>
+      <p>اكتب لي على واتساب باسم نشاطك ورابط حسابك، وأرد عليك بملاحظات أولية دون مقابل.</p>
+      <a class="btn" href="https://wa.me/966548480154?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%20%D8%AD%D8%B3%D8%A7%D8%A8%D8%A7%D8%AA%20%D9%86%D8%B4%D8%A7%D8%B7%D9%8A%20%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A.">ابدأ المحادثة على واتساب</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>bakrblog</span>
+    <a href="https://instagram.com/bakrblog" rel="noopener">إنستغرام: bakrblog</a>
+    <span class="ltr">0548480154</span>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn" href="https://wa.me/966548480154?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%20%D8%AD%D8%B3%D8%A7%D8%A8%D8%A7%D8%AA%20%D9%86%D8%B4%D8%A7%D8%B7%D9%8A%20%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A.">اطلب عرض سعر عبر واتساب</a></div>
+
+</body>
+</html>
